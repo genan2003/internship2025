@@ -22,7 +22,7 @@ Reading about how to write the TockOS kernel and how to boot the NXP LPC55 board
 
 ## 7 July 2025
 
-Started working on the (issue)[https://github.com/WyliodrinEmbeddedIoT/tock/issues/18] today. I began by learning how to open the debug probe on the board. Then I started looking into the memory mapping of the board and began writing the layout.ld file.
+Started working on the [issue](https://github.com/WyliodrinEmbeddedIoT/tock/issues/18) today. I began by learning how to open the debug probe on the board. Then I started looking into the memory mapping of the board and began writing the layout.ld file.
 
 After creating the layout.ld file, Vlad identified the architecture for the Cortex-M33 and added it to Tock. Before that, we began writing the other required components (the chip file and the board file), but we ran into a problem.
 
