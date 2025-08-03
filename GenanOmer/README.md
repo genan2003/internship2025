@@ -77,3 +77,47 @@ I plan to dive deeper into this and work on a fix tomorrow.
 Today, I resumed work on blinking the LED and investigated the suspected issue with the `.elf` file’s entry point. It turned out the real problem was that I had forgotten to initialize the stack memory, which prevented the program from flashing to the board. After fixing this, the LED blinked successfully—confirming that the basic setup is now functional.
 
 Next, I moved on to implementing GPIO interrupts and attempted to test them using a button. I defined the necessary interrupt logic, but the button input did not trigger as expected. I plan to investigate the issue further tomorrow.
+
+## 17 July 2025
+
+Today, I began by learning more about interrupts and understanding the steps required to implement one. After that, I worked on developing the necessary functions to use interrupts effectively.
+
+## 18 July 2025
+
+I learned more about interrupts and discovered that NXP boards require additional peripherals to handle them. With this understanding, I plan to begin implementing interrupts next week.
+
+## 21 July 2025
+
+After identifying the necessary peripherals for implementing interrupts, I began working on integrating the `PINT` peripheral to enable interrupt functionality on my board. I encountered several errors during the process, so I decided to continue troubleshooting and development tomorrow.
+
+## 22 July 2025
+
+Today, I created a basic implementation of the `PINT` peripheral and began testing it. However, when I checked the `.elf` file, I noticed a critical issue—the `.vectors` section was missing. This raised some concerns, so I verified a sample application from the MCUXpresso IDE, where the `.vectors` section was present. I plan to investigate the cause of this discrepancy tomorrow.
+
+## 23 July 2025
+
+Today, I continued investigating the issue from yesterday, but despite trying several solutions, nothing worked. I even attempted to manually add the `.vectors` section in the `layout.ld` file, but it still didn’t appear. I’ve decided to continue exploring the problem tomorrow.
+
+## 24 July 2025
+
+Today, I resolved the issue I encountered yesterday. It turned out that something was missing from the `lib.rs` file, and I was able to identify the problem quickly. Additionally, the `.vectors` section was not correctly placed in memory, so I had to add an offset to align it properly, following the example for reference.
+
+## 25 July 2025
+
+Today, I read more about how the `PINT` peripheral works and what I have to make next week.
+
+## 28 July 2025
+
+Today, I ran into a major issue—when I uploaded the code to the board, it immediately triggered the `svc` interrupt, which is unexpected behavior. I spent time trying to identify the cause, but I wasn’t able to find a solution. I’ve decided to continue debugging the problem tomorrow.
+
+## 29 July 2025
+
+Today, I continued working on the issue and tried to pinpoint the root cause. I explored several possible solutions, but none of them worked. I’ve decided to dive deeper into the documentation to better understand what I might be doing wrong.
+
+## 30 July 2025
+
+Today, I resolved the issue with the `svc` interrupt. I began testing my interrupt functions, but they still didn’t work as expected—likely due to something I implemented incorrectly. To troubleshoot, I reviewed the interrupt implementation from Embassy and incorporated their approach into my code. I plan to test the changes tomorrow.
+
+## 31 July 2025
+
+Today was a big day—I finally got interrupts working! I tested them using an LED (since I haven’t implemented UART yet), and confirmed that the LED blinks correctly when an interrupt is triggered. It turns out the issue was caused by the `semihosting` dependency. With that resolved, I’ve now started working on implementing the drivers.
