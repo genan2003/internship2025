@@ -121,3 +121,27 @@ Today, I resolved the issue with the `svc` interrupt. I began testing my interru
 ## 31 July 2025
 
 Today was a big day—I finally got interrupts working! I tested them using an LED (since I haven’t implemented UART yet), and confirmed that the LED blinks correctly when an interrupt is triggered. It turns out the issue was caused by the `semihosting` dependency. With that resolved, I’ve now started working on implementing the drivers.
+
+## 1 August 2025
+
+Today I looked at how other boards organize their `main.rs` files to better understand how I should structure my own kernel file.
+
+## 4 August 2025
+
+Today I started to write the LED and GPIO drivers in my `main.rs` file, but I encountered some problems with the lifetimes and declarations and I decide to look into them tomorrow.
+
+## 5 August 2025
+
+Today, I started by trying to solve my problems from the code, but nothing seems to work, so I will have to think of another way to declare the GPIO.
+
+## 6 August 2025
+
+Today, I come with a new idea to add all the peripherals from GPIO(PINT, INPUTMUX, GPIO and IOCON) in only one structure and use it as GPIO. By making this I get what I want and all my problems from the code dissapear.
+
+## 7 August 2025 
+
+Today, I started by trying to upload an application to the board. I started by making a `Makefile` for my board in order to be able to upload the kernel with the app. After making this, I encounter some weird errors and I decide to look into them tomorrow.
+
+## 8 August 2025
+
+Today, I started by focusing on solving the problems with the interrupts I had yesterday and I finally was able to upload the `buttons` application and it worked very good.
