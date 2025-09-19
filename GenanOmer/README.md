@@ -145,3 +145,55 @@ Today, I started by trying to upload an application to the board. I started by m
 ## 8 August 2025
 
 Today, I started by focusing on solving the problems with the interrupts I had yesterday and I finally was able to upload the `buttons` application and it worked very good.
+
+## 9 August 2025
+
+Today, I refactored the code to make it cleaner and more organized, ensuring a solid foundation for future development on this board.
+
+## 11 August 2025
+
+Today, I started learning about alarms in Tock and how to implement one.
+
+## 12 August 2025
+
+Today, I looked at how alarms are implemented on other boards and tested some of them to see how they work.
+
+## 13 August 2025
+
+I started to work of the implementation of the alarm, that was stated in this [issue](https://github.com/WyliodrinEmbeddedIoT/tock/issues/28), after some research I found out I have to implement the `ctimer0` peripheral, so this is what I am going to do for the next couple of days.
+
+## 14 August 2025
+
+Today, I continued working on implementing the `ctimer0` peripheral and studied the clock system on the NXP board in more detail.
+
+## 15 August 2025
+
+Today, I finished the implementation of the peripheral, next is to test it in the next weeks.
+
+## 25 August 2025
+
+Today, I started by uploading the `blink` example from `libtock-c`, but the alarm is not working, maybe I have to look more into the clocks multiplexer in order to understand what is happening.
+
+## 26 August 2025
+
+Today, I start by looking into the clocks multipleser in order to see what is happening, but without any success. Maybe I have to try other things.
+
+## 27 August 2025
+
+Today, I start by refactoring some code from the `ctimer0.rs` file and trying to understand why is not working, I started by watching how to counter timer was incrementing, but my alarm is not firing.
+
+## 28 August 2025
+
+Today, I try again to flash the `blink` example and I found out that the alarm is working, but is not precise, so when is set to 200ms will fire after 15s, which is very bad, but is a step further.
+
+## 29 August 2025
+
+Today, I solved the problem that I have yesterday by setting the correct clock and now the alarm is very precised. Also started my PR about the LPC55 alarm [here](https://github.com/WyliodrinEmbeddedIoT/tock/pull/42)
+
+## 1 - 15 September 2025
+
+Refactoring, rebasing the code and solving some problems with the memory layout to get things ready for the PR on the upstream.
+
+## 16 September 2025
+
+Started the [pull request](https://github.com/tock/tock/pull/4601) on the upstream and now I am waiting for the review.
